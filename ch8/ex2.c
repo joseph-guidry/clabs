@@ -23,6 +23,7 @@ void stats(int *nums, int sz, double *mean, double *var)
 	average(mean, sz);
 	printf("Mean: %.2f\n", *mean);
 	variance(mean, nums, sz, var);
+	printf("Variance: %.2f\n", *var/sz);
 }
 
 void average(double *mean, int sz)
@@ -31,14 +32,11 @@ void average(double *mean, int sz)
 }
 void variance(double *mean, int *nums, int sz, double *var)
 {
-    int total;
 	int *pnums = nums;
-	for (pnums = nums; pnums < (nums + sz); pnums++){
-		*var = (*pnums - *mean)*(*pnums - *mean);
-		printf("Variance: %.2f\n", *var);
-        total += *var;
+	for (pnums = nums ; pnums < (nums + sz); pnums++){
+		*var += (*pnums - *mean)*(*pnums - *mean);
+
 	}
-    printf("%d \n", total);
 }
 
 
