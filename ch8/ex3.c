@@ -50,7 +50,7 @@ void myreverse(char *in)
     int len;
     len = mystrlen(in);
     char temp, *px;
-    for(px = in + len - 1; px >= in ; px--){
+    for(px = in + len - 1; px > in ; px--){
         temp = *in;
         *in++ = *px;
         *px = temp;

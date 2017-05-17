@@ -20,7 +20,7 @@ void split(char s[], char a[], char b[])
 {
 	int i = 0;
 	while (s[i] != ('\0')){
-	    if ((s[i] == ' ')|| (s[i] == '\t')|| (s[i] == '\n')) {
+	   if ((s[i] == ' ')|| (s[i] == '\t')|| (s[i] == '\n')) {
             s[i] = '\0';
             break;
         }
@@ -33,7 +33,7 @@ void split(char s[], char a[], char b[])
     a[i] = '\0';
     
     i = 0;
-	for (h; s[h] != '\0'; h++){
+	for (; s[h] != '\0'; h++){
 		b[i] = s[h];
 		i++;
     }

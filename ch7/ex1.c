@@ -9,13 +9,14 @@ void strip(char s[], char nl);
 
 int main()
 {
-    char line[MAX];
+    char line[MAX], palindrome[MAX];
     printf("Enter: \n");
     fgets(line, MAX, stdin);
     strip(line, '\n');
+    strcpy(palindrome, line);
     reverse(line);
     printf("%s\n", line);
-    if (mystrcmp(line, "olleh") == 0){
+    if (mystrcmp(line, palindrome) == 0){
     	printf("They are the same\n");
     }else
     	printf("They are the not same\n");
@@ -31,12 +32,13 @@ void strip(char s[], char nl)
 void reverse(char s[])
 {
 	char temp;
-	int i, x = strlen(s) - 1;
-	for (i = 0; i < (strlen(s) - 1)/2; i++){
+	int i = 0, x = strlen(s) - 1;
+	while(i < x){
 		temp = s[i];
 		s[i] = s[x];
 		s[x] = temp;
 		x--;
+        i++;
 	}
 }
 

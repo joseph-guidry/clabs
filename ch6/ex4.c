@@ -5,21 +5,18 @@ int main(int argc, char *argv[])
 {
     if (argc == 2){
         if (argcompare(argv[1], "swordfish")){
-            printf("Access Granted");
+            printf("Access Granted\n");
             return(0);
-        } else{
-            printf("here");
         }
     }
-    printf("Access Denied");
+    printf("Access Denied\n");
 }  
 
-int argcompare(char s[], char arg[])
+int argcompare(char *s, char *arg)
 {
-    int i = 0;
-    while(s[i] == arg[i]){
-        if (s[i++] == '\0')
-        return(1);
+    while(*s++ == *arg++){
+        if (*s == '\0')
+            return(1);
     }
     return(0);
 }
